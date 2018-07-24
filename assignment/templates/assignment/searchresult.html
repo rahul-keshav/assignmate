@@ -1,0 +1,27 @@
+{% extends 'accounts/base.html'%}
+
+{% block title%}
+<title>result</title>
+{% endblock %}
+
+
+{% block body %}
+
+assignments
+
+<br>
+
+{% for result in found_entries%}
+<a href="{% url 'assignment:assignment' result.id %}">{{ result }}</a>
+<br>
+{% endfor %}
+
+pdf and pics
+<br>
+
+{% for result in found_entries_studymaterial%}
+<a href="{{result.document.url}}">{{ result }}</a>
+<br>
+{% endfor %}
+
+{% endblock %}
